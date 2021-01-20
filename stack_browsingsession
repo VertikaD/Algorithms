@@ -1,0 +1,22 @@
+browsing_session = []
+
+browsing_session.append(1)
+browsing_session.append(2)
+browsing_session.append(3)
+
+print(browsing_session)
+
+try:
+    user_input = ' '
+    while(browsing_session):  # Till length of stack is not Zero
+        user_input = input('Click Back button?:Yes/No ')
+        if(user_input == 'Yes'):
+            browsing_session.pop()
+            if browsing_session:
+                print('redirect', browsing_session[-1])
+            else:
+                print('disable')
+        else:
+            break
+except:
+    print('Error')
