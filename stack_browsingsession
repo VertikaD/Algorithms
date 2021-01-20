@@ -1,7 +1,7 @@
 browsing_session = []  # setting to empty list/stack
 
-# if user navigate to website no. 1  # add the address to the current website
-browsing_session.append(1)
+# if user navigate to website no. 1  
+browsing_session.append(1)   # add the address to the current website
 browsing_session.append(2)
 browsing_session.append(3)
 
