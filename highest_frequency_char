@@ -17,6 +17,7 @@ def highest_frequency_char(string):
 
     sorted_string = sorted(char_frequency.items(),
                            key=lambda keyvalue: keyvalue[1], reverse=True) #then the returned frequencies is sorted by the sorted fn.
+#reverse = True is sorting frequencies in descending order.
     print('Frequencies of all characters:', '\n', sorted_string)
 
 #extracting only characters from the sorted list of tuples.
