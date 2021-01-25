@@ -1,0 +1,35 @@
+def highest_frequency_char(string):
+#Step 1 : Finding occurrence/frequency of each character in the text.
+    char_frequency = {}
+#iterating over string and passing each character to loop variable 'char' in each iteration.
+    for char in string:
+        if char in char_frequency: #checking if char exist in dictionary.
+            char_frequency[char] += 1 #if it exists then increment its frequency by 1.
+#because when it was stored in dictionary it's value was already set to 1 (in else statement).
+        else:
+            char_frequency[char] = 1 #if char does not exist in dictionary, 
+            #we add a key value pair in the dict. as char be the key and its value be the frequency(here=1).
+            
+#Step 2 : Finding the most repeated character.
+#.items() method returns all key value pairs from dictionary as tuples in a list.
+#Here,tuple has 2 items(character,frequency).Then tuples will be passed to lambda fn.
+#keyvalue is the parameter of lambda fn.lambda fn is returning second item of tuple which is frequency.
+
+    sorted_string = sorted(char_frequency.items(),
+                           key=lambda keyvalue: keyvalue[1], reverse=True) #then the frequency is sorted by the sorted fn.
+    print('Frequencies of all characters:', '\n', sorted_string)
+
+#extracting only characters from the sorted list of tuples.
+
+    character = []  # defining empty list
+    for t in sorted_string:  # iterating over the sorted string to get each tuple
+        #first index[0] of each tuple i.e the characters is added in the list :character
+        character.append(t[0])
+
+    return character[0]
+
+
+highest_frequency = highest_frequency_char(
+    'Program to find most repeated character')
+print('Most repeated character in the text is : ',
+      '\n', '|', highest_frequency, '|')  # vertical bar is used in case space came out to be the character with highest frequency
