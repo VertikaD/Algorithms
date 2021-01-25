@@ -16,7 +16,7 @@ def highest_frequency_char(string):
 #keyvalue is the parameter of lambda fn.lambda fn is returning second item of tuple which is frequency.
 
     sorted_string = sorted(char_frequency.items(),
-                           key=lambda keyvalue: keyvalue[1], reverse=True) #then the frequency is sorted by the sorted fn.
+                           key=lambda keyvalue: keyvalue[1], reverse=True) #then the returned frequencies is sorted by the sorted fn.
     print('Frequencies of all characters:', '\n', sorted_string)
 
 #extracting only characters from the sorted list of tuples.
